@@ -22,28 +22,28 @@
                 </div>
                 <div class="card-body p-4 p-sm-5">
                     <h5 class="card-title text-center mb-5 fw-light fs-5">Registrarse</h5>
-                    <form>
+                    <form method="post" action="./servidor/registro/registrar.php">
 
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInputUsername" placeholder="myusername" required autofocus>
-                        <label for="floatingInputUsername">Usuario</label>
+                        <input type="text" name="usuario" class="form-control" id="usuario" placeholder="usuario" autofocus required>
+                        <label for="usuario">Usuario</label>
                     </div>
 
                     <div class="form-floating mb-3">
-                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                        <label for="floatingPassword">Password</label>
+                        <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
+                        <label for="password">Password</label>
                     </div>
 
                     <div class="form-floating mb-3">
-                        <input type="password" class="form-control" id="floatingPasswordConfirm" placeholder="Confirm Password">
-                        <label for="floatingPasswordConfirm">Confirmar Password</label>
+                        <input type="password" name="password_confirm" class="form-control" id="passwordConfirm" placeholder="Confirm Password">
+                        <label for="passwordConfirm">Confirmar Password</label>
                     </div>
 
                     <div class="d-grid mb-2">
                         <button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="submit">Registrar</button>
                     </div>
 
-                    <a class="d-block text-center mt-2 small" href="#">Tienes una cuenta? Inicia sesión</a>
+                    <a class="d-block text-center mt-2 small" href="index.php">Tienes una cuenta? Inicia sesión</a>
 
                     <hr class="my-4">
 

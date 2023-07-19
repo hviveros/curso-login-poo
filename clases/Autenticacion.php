@@ -24,14 +24,20 @@
             $passwordExistente = "";
             $sql = "SELECT * FROM usuarios WHERE usuario = '$usuario'";
             $respuesta = mysqli_query($conexion, $sql);
-            //pide una ejecución de un query
-            $passwordExistente = mysqli_fetch_array($respuesta)['password'];
             
-            //función que compara passwords con un hash, devuelve true o false
-            if (password_verify($password, $passwordExistente)) {
-                //si es true, se crean las variables de sesión
-                $_SESSION['usuario'] = $usuario;
-                return true;
+            if (mysqli_num_rows($respuesta) > 0) {            
+                //pide una ejecución de un query
+                $passwordExistente = mysqli_fetch_array($respuesta);
+                $passwordExistente = $passwordExistente['password'];
+
+                //función que compara passwords con un hash, devuelve true o false
+                if (password_verify($password, $passwordExistente)) {
+                    //si es true, se crean las variables de sesión
+                    $_SESSION['usuario'] = $usuario;
+                    return true;
+                } else {
+                    return false;
+                }
             } else {
                 return false;
             }

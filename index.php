@@ -24,7 +24,7 @@
                         <h3 class="login-heading mb-4">Login de usuarios</h3>
           
                         <!-- Sign In Form -->
-                        <form>
+                        <form method="post" action="./servidor/login/logear.php">
                           <div class="form-floating mb-3">
                             <input type="text" name="usuario" class="form-control" id="usuario" placeholder="usuario">
                             <label for="usuario">Usuario</label>

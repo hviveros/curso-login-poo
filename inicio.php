@@ -1,3 +1,14 @@
+<?php
+
+    session_start();
+
+    if (!isset($_SESSION['usuario'])) {
+        header("location: index.php");
+    }
+
+?>
+
+
 <!doctype html>
 <html lang="es">
     <head>
@@ -24,11 +35,12 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link active" href="#"><?= $_SESSION['usuario']; ?></a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="./servidor/login/logout.php">Cerrar sesión</a>
                     </li>
                 </ul>
             </div>
@@ -37,7 +49,7 @@
 
         <!-- Page Content -->
         <div class="container">
-            <h1 class="mt-4">Bienvenid@</h1>
+            <h1 class="mt-4">Bienvenid@ <?= $_SESSION['usuario']; ?></h1>
             <p>Sistema de login y registro con PHP, MySQL y Bootstrap 5 con POO y password hash</p>
         </div>
     
